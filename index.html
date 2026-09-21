@@ -1,29 +1,23 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CodeSphere - CSS Programs</title>
+    <title>JavaScript Practicals | CodeSphere</title>
 
     <style>
-
-        /* ---------- RESET ---------- */
-
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
-
-        /* ---------- BODY ---------- */
-
         body {
+            margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            min-height: 100vh;
             color: white;
+            min-height: 100vh;
 
             background:
                 radial-gradient(circle at top left, #4f46e5, transparent 35%),
@@ -31,9 +25,7 @@
                 #020617;
         }
 
-
-        /* ---------- NAVBAR ---------- */
-
+        /* NAVBAR */
         nav {
             height: 70px;
             padding: 0 8%;
@@ -45,235 +37,188 @@
             background: rgba(15, 23, 42, 0.75);
             backdrop-filter: blur(12px);
 
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
 
         .logo {
             font-size: 25px;
             font-weight: bold;
         }
 
-
         .logo span {
             color: #38bdf8;
         }
-
 
         nav a {
             color: #cbd5e1;
             text-decoration: none;
             margin-left: 25px;
-            font-size: 15px;
         }
-
 
         nav a:hover {
             color: #38bdf8;
         }
 
-
-        /* ---------- HERO ---------- */
-
+        /* HERO */
         .hero {
             text-align: center;
-            padding: 70px 20px 45px;
+            padding: 80px 20px 50px;
         }
-
 
         .badge {
             display: inline-block;
 
-            padding: 8px 18px;
-            margin-bottom: 22px;
+            padding: 8px 14px;
 
             border: 1px solid rgba(56, 189, 248, 0.4);
-            border-radius: 30px;
+            background: rgba(56, 189, 248, 0.08);
 
             color: #38bdf8;
-            background: rgba(56, 189, 248, 0.08);
+
+            border-radius: 999px;
 
             font-size: 14px;
         }
 
-
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 18px;
+            font-size: 52px;
+            margin: 20px 0 15px;
         }
-
 
         .hero h1 span {
             color: #38bdf8;
         }
 
-
         .hero p {
-            max-width: 700px;
-            margin: auto;
-
             color: #94a3b8;
+
             font-size: 17px;
             line-height: 1.7;
+
+            max-width: 750px;
+            margin: auto;
         }
 
-
-        /* ---------- PROGRAM SECTION ---------- */
-
-        .programs {
+        /* PRACTICALS */
+        .container {
             width: 90%;
             max-width: 1100px;
-            margin: 20px auto 80px;
+
+            margin: auto;
+            padding: 20px 0 70px;
         }
 
-
-        .programs h2 {
+        .section-title {
             text-align: center;
-            font-size: 30px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
+        .section-title h2 {
+            font-size: 30px;
+        }
 
-        /* ---------- CARDS ---------- */
+        .section-title p {
+            color: #94a3b8;
+        }
 
         .cards {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+
+            gap: 20px;
         }
 
-
         .card {
-            padding: 30px 25px;
+            padding: 25px;
 
             border-radius: 20px;
 
             background: rgba(255, 255, 255, 0.07);
+
             backdrop-filter: blur(15px);
 
             border: 1px solid rgba(255, 255, 255, 0.12);
 
-            transition: 0.3s;
+            text-decoration: none;
+            color: white;
 
-            display: flex;
-            flex-direction: column;
+            transition: 0.3s;
         }
 
-
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
 
             border-color: #38bdf8;
 
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.3);
         }
-
-
-        /* ---------- PRACTICAL NUMBER ---------- */
 
         .number {
-            width: 55px;
-            height: 55px;
-
-            margin-bottom: 20px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 15px;
-
-            background: rgba(56, 189, 248, 0.12);
-
-            border: 1px solid rgba(56, 189, 248, 0.2);
-
             color: #38bdf8;
 
-            font-size: 18px;
+            font-size: 14px;
             font-weight: bold;
+
+            margin-bottom: 12px;
         }
-
-
-        /* ---------- CARD CONTENT ---------- */
 
         .card h3 {
             font-size: 19px;
+
             line-height: 1.5;
 
-            margin-bottom: 25px;
-
-            min-height: 85px;
+            margin: 0 0 18px;
         }
 
-
-        /* ---------- BUTTON ---------- */
-
-        .btn {
+        .button {
             display: inline-block;
 
-            padding: 13px 20px;
-
             background: #0284c7;
+
             color: white;
 
-            text-decoration: none;
-
-            text-align: center;
+            padding: 10px 15px;
 
             border-radius: 10px;
 
+            font-size: 14px;
             font-weight: bold;
-
-            transition: 0.3s;
-
-            margin-top: auto;
         }
 
-
-        .btn:hover {
+        .card:hover .button {
             background: #0ea5e9;
-            transform: scale(1.05);
         }
 
-
-        /* ---------- FOOTER ---------- */
-
+        /* FOOTER */
         footer {
-            text-align: center;
-
-            padding: 25px;
-
             border-top: 1px solid rgba(255, 255, 255, 0.1);
 
             color: #94a3b8;
 
             background: rgba(2, 6, 23, 0.7);
-        }
 
+            padding: 25px 8%;
+
+            text-align: center;
+        }
 
         footer strong {
             color: white;
         }
 
-
-        /* ---------- MOBILE ---------- */
-
+        /* RESPONSIVE */
         @media (max-width: 850px) {
 
             .cards {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
 
             .hero h1 {
                 font-size: 40px;
             }
-
         }
-
 
         @media (max-width: 600px) {
 
@@ -293,20 +238,17 @@
                 font-size: 32px;
             }
 
-            .programs {
-                width: 92%;
+            .cards {
+                grid-template-columns: 1fr;
             }
-
         }
-
     </style>
 </head>
 
 
 <body>
 
-
-    <!-- ---------- NAVIGATION ---------- -->
+    <!-- NAVBAR -->
 
     <nav>
 
@@ -320,8 +262,8 @@
                 Home
             </a>
 
-            <a href="#programs">
-                CSS Programs
+            <a href="index.html">
+                JavaScript
             </a>
 
         </div>
@@ -329,1563 +271,1335 @@
     </nav>
 
 
-
-    <!-- ---------- HERO SECTION ---------- -->
+    <!-- HERO -->
 
     <section class="hero">
 
-        <div class="badge">
-            CSS Practical Programs
-        </div>
-
+        <span class="badge">
+            CodeSphere • JavaScript Lab
+        </span>
 
         <h1>
-            CSS <span>Programs</span>
+            JavaScript <span>Practicals</span>
         </h1>
 
-
         <p>
-            Explore CSS practical programs with working examples.
-            Learn selectors, colors, layouts, Flexbox, Grid,
-            animations, responsive design and more.
+            Explore 67 JavaScript practical programs with
+            interactive examples and simple explanations.
+            Select any practical below to open the program.
         </p>
 
     </section>
 
 
+    <!-- PRACTICALS -->
 
-    <!-- ---------- PROGRAMS ---------- -->
+    <div class="container">
 
-    <section class="programs" id="programs">
+        <div class="section-title">
 
+            <h2>
+                67 JavaScript Practicals
+            </h2>
 
-        <h2>
-            Choose Your CSS Practical
-        </h2>
+            <p>
+                Click any practical to open it.
+            </p>
+
+        </div>
 
 
         <div class="cards">
 
 
-            <!-- 01 -->
+            <!-- 1 -->
 
-            <div class="card">
+            <a href="1.html" class="card">
 
                 <div class="number">
-                    01
+                    PRACTICAL 01
                 </div>
 
                 <h3>
-                    Demonstrate the use of inline, internal and external CSS.
+                    Write a JavaScript program to display "Hello World".
                 </h3>
 
-                <a href="1.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
+            </a>
 
 
+            <!-- 2 -->
 
-            <!-- 02 -->
-
-            <div class="card">
+            <a href="2.html" class="card">
 
                 <div class="number">
-                    02
+                    PRACTICAL 02
                 </div>
 
                 <h3>
-                    Demonstrate different CSS selectors.
+                    Write a JavaScript program to perform arithmetic operations.
                 </h3>
 
-                <a href="2.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
+            </a>
 
 
+            <!-- 3 -->
 
-            <!-- 03 -->
-
-            <div class="card">
+            <a href="3.html" class="card">
 
                 <div class="number">
-                    03
+                    PRACTICAL 03
                 </div>
 
                 <h3>
-                    Apply colors, backgrounds and borders using CSS.
+                    Write a program to find the largest of three numbers.
                 </h3>
 
-                <a href="3.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
+            </a>
 
 
+            <!-- 4 -->
 
-            <!-- 04 -->
-
-            <div class="card">
+            <a href="4.html" class="card">
 
                 <div class="number">
-                    04
+                    PRACTICAL 04
                 </div>
 
                 <h3>
-                    Demonstrate font properties and text formatting using CSS.
+                    Write a program to check whether a number is even or odd.
                 </h3>
 
-                <a href="4.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
+            </a>
 
 
+            <!-- 5 -->
 
-            <!-- 05 -->
-
-            <div class="card">
+            <a href="5.html" class="card">
 
                 <div class="number">
-                    05
+                    PRACTICAL 05
                 </div>
 
                 <h3>
-                    Demonstrate the CSS box model.
+                    Write a program to check whether a number is positive, negative, or zero.
                 </h3>
 
-                <a href="5.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
+            </a>
 
 
+            <!-- 6 -->
 
-            <!-- 06 -->
-
-            <div class="card">
+            <a href="6.html" class="card">
 
                 <div class="number">
-                    06
+                    PRACTICAL 06
                 </div>
 
                 <h3>
-                    Demonstrate width, height and sizing properties.
+                    Write a program to find the factorial of a number.
                 </h3>
 
-                <a href="6.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
+            </a>
 
 
+            <!-- 7 -->
 
-            <!-- 07 -->
-
-            <div class="card">
+            <a href="7.html" class="card">
 
                 <div class="number">
-                    07
+                    PRACTICAL 07
                 </div>
 
                 <h3>
-                    Demonstrate static, relative, absolute, fixed and sticky positioning.
+                    Write a program to generate the Fibonacci series.
                 </h3>
 
-                <a href="7.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
+            </a>
 
 
+            <!-- 8 -->
 
-            <!-- 08 -->
-
-            <div class="card">
+            <a href="8.html" class="card">
 
                 <div class="number">
-                    08
+                    PRACTICAL 08
                 </div>
 
                 <h3>
-                    Demonstrate float and clear properties.
+                    Write a program to check whether a number is prime.
                 </h3>
 
-                <a href="8.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
+            </a>
 
 
+            <!-- 9 -->
 
-            <!-- 09 -->
-
-            <div class="card">
+            <a href="9.html" class="card">
 
                 <div class="number">
-                    09
+                    PRACTICAL 09
                 </div>
 
                 <h3>
-                    Create a styled navigation bar using CSS.
+                    Write a program to check whether a number is a palindrome.
                 </h3>
 
-                <a href="9.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 10 -->
 
-            <div class="card">
+            <a href="10.html" class="card">
 
                 <div class="number">
-                    10
+                    PRACTICAL 10
                 </div>
 
                 <h3>
-                    Demonstrate CSS pseudo-classes.
+                    Write a program to reverse a number.
                 </h3>
 
-                <a href="10.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 11 -->
 
-            <div class="card">
+            <a href="11.html" class="card">
 
                 <div class="number">
-                    11
+                    PRACTICAL 11
                 </div>
 
                 <h3>
-                    Demonstrate CSS pseudo-elements.
+                    Write a program to find the sum of digits of a number.
                 </h3>
 
-                <a href="11.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 12 -->
 
-            <div class="card">
+            <a href="12.html" class="card">
 
                 <div class="number">
-                    12
+                    PRACTICAL 12
                 </div>
 
                 <h3>
-                    Style lists and tables using CSS.
+                    Write a program to find the largest and smallest element in an array.
                 </h3>
 
-                <a href="12.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 13 -->
 
-            <div class="card">
+            <a href="13.html" class="card">
 
                 <div class="number">
-                    13
+                    PRACTICAL 13
                 </div>
 
                 <h3>
-                    Create and style a registration form using CSS.
+                    Write a program to sort an array.
                 </h3>
 
-                <a href="13.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 14 -->
 
-            <div class="card">
+            <a href="14.html" class="card">
 
                 <div class="number">
-                    14
+                    PRACTICAL 14
                 </div>
 
                 <h3>
-                    Demonstrate Flexbox layout.
+                    Write a program to find the sum and average of array elements.
                 </h3>
 
-                <a href="14.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 15 -->
 
-            <div class="card">
+            <a href="15.html" class="card">
 
                 <div class="number">
-                    15
+                    PRACTICAL 15
                 </div>
 
                 <h3>
-                    Demonstrate CSS Grid layout.
+                    Write a program to demonstrate JavaScript functions.
                 </h3>
 
-                <a href="15.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 16 -->
 
-            <div class="card">
+            <a href="16.html" class="card">
 
                 <div class="number">
-                    16
+                    PRACTICAL 16
                 </div>
 
                 <h3>
-                    Demonstrate media queries for responsive design.
+                    Write a program using arrow functions.
                 </h3>
 
-                <a href="16.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 17 -->
 
-            <div class="card">
+            <a href="17.html" class="card">
 
                 <div class="number">
-                    17
+                    PRACTICAL 17
                 </div>
 
                 <h3>
-                    Demonstrate CSS transitions and transformations.
+                    Write a program demonstrating strings and string methods.
                 </h3>
 
-                <a href="17.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 18 -->
 
-            <div class="card">
+            <a href="18.html" class="card">
 
                 <div class="number">
-                    18
+                    PRACTICAL 18
                 </div>
 
                 <h3>
-                    Demonstrate CSS animations.
+                    Write a program demonstrating arrays and array methods.
                 </h3>
 
-                <a href="18.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 19 -->
 
-            <div class="card">
+            <a href="19.html" class="card">
 
                 <div class="number">
-                    19
+                    PRACTICAL 19
                 </div>
 
                 <h3>
-                    Create a responsive navigation bar using CSS.
+                    Write a program demonstrating objects in JavaScript.
                 </h3>
 
-                <a href="19.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 20 -->
 
-            <div class="card">
+            <a href="20.html" class="card">
 
                 <div class="number">
-                    20
+                    PRACTICAL 20
                 </div>
 
                 <h3>
-                    Create a personal portfolio webpage using CSS.
+                    Write a program demonstrating Date and Math objects.
                 </h3>
 
-                <a href="20.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 21 -->
 
-            <div class="card">
+            <a href="21.html" class="card">
 
                 <div class="number">
-                    21
+                    PRACTICAL 21
                 </div>
 
                 <h3>
-                    Create a college/student profile webpage.
+                    DOM & Event-Based Experiments
                 </h3>
 
-                <a href="21.html" class="btn">
-                    Open Practical →
-                </a>
+                <span class="button">
+                    Open Section →
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 22 -->
 
-            <div class="card">
+            <a href="22.html" class="card">
 
                 <div class="number">
-                    22
+                    PRACTICAL 22
                 </div>
 
                 <h3>
-                    Create a styled login page using CSS.
+                    Create a webpage that changes text using JavaScript.
                 </h3>
 
-                <a href="22.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 23 -->
 
-            <div class="card">
+            <a href="23.html" class="card">
 
                 <div class="number">
-                    23
+                    PRACTICAL 23
                 </div>
 
                 <h3>
-                    Create a styled product card using CSS.
+                    Change the background color of a webpage using JavaScript.
                 </h3>
 
-                <a href="23.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 24 -->
 
-            <div class="card">
+            <a href="24.html" class="card">
 
                 <div class="number">
-                    24
+                    PRACTICAL 24
                 </div>
 
                 <h3>
-                    Create a responsive photo gallery using CSS.
+                    Create a button click event using JavaScript.
                 </h3>
 
-                <a href="24.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 25 -->
 
-            <div class="card">
+            <a href="25.html" class="card">
 
                 <div class="number">
-                    25
+                    PRACTICAL 25
                 </div>
 
                 <h3>
-                    Create a complete homepage using HTML and CSS.
+                    Create a program to show/hide an HTML element.
                 </h3>
 
-                <a href="25.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 26 -->
 
-            <div class="card">
+            <a href="26.html" class="card">
 
                 <div class="number">
-                    26
+                    PRACTICAL 26
                 </div>
 
                 <h3>
-                    Demonstrate CSS inheritance and specificity.
+                    Create a program to change an image when a button is clicked.
                 </h3>
 
-                <a href="26.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 27 -->
 
-            <div class="card">
+            <a href="27.html" class="card">
 
                 <div class="number">
-                    27
+                    PRACTICAL 27
                 </div>
 
                 <h3>
-                    Demonstrate universal, element, class, ID, attribute and grouping selectors.
+                    Create a digital clock using JavaScript.
                 </h3>
 
-                <a href="27.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 28 -->
 
-            <div class="card">
+            <a href="28.html" class="card">
 
                 <div class="number">
-                    28
+                    PRACTICAL 28
                 </div>
 
                 <h3>
-                    Demonstrate CSS combinator selectors.
+                    Create a simple calculator using HTML, CSS, and JavaScript.
                 </h3>
 
-                <a href="28.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 29 -->
 
-            <div class="card">
+            <a href="29.html" class="card">
 
                 <div class="number">
-                    29
+                    PRACTICAL 29
                 </div>
 
                 <h3>
-                    Demonstrate CSS variables.
+                    Create a number guessing game.
                 </h3>
 
-                <a href="29.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 30 -->
 
-            <div class="card">
+            <a href="30.html" class="card">
 
                 <div class="number">
-                    30
+                    PRACTICAL 30
                 </div>
 
                 <h3>
-                    Demonstrate background images and their positioning.
+                    Create a form validation program.
                 </h3>
 
-                <a href="30.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 31 -->
 
-            <div class="card">
+            <a href="31.html" class="card">
 
                 <div class="number">
-                    31
+                    PRACTICAL 31
                 </div>
 
                 <h3>
-                    Demonstrate CSS gradients.
+                    Validate name, email, phone number, and password using JavaScript.
                 </h3>
 
-                <a href="31.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 32 -->
 
-            <div class="card">
+            <a href="32.html" class="card">
 
                 <div class="number">
-                    32
+                    PRACTICAL 32
                 </div>
 
                 <h3>
-                    Demonstrate box-shadow and text-shadow.
+                    Create a to-do list using JavaScript.
                 </h3>
 
-                <a href="32.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 33 -->
 
-            <div class="card">
+            <a href="33.html" class="card">
 
                 <div class="number">
-                    33
+                    PRACTICAL 33
                 </div>
 
                 <h3>
-                    Create different shapes using border-radius.
+                    Create a simple quiz application.
                 </h3>
 
-                <a href="33.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 34 -->
 
-            <div class="card">
+            <a href="34.html" class="card">
 
                 <div class="number">
-                    34
+                    PRACTICAL 34
                 </div>
 
                 <h3>
-                    Demonstrate opacity and transparency in CSS.
+                    Create a counter application with increment and decrement buttons.
                 </h3>
 
-                <a href="34.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 35 -->
 
-            <div class="card">
+            <a href="35.html" class="card">
 
                 <div class="number">
-                    35
+                    PRACTICAL 35
                 </div>
 
                 <h3>
-                    Demonstrate CSS overflow properties.
+                    Create a stopwatch using JavaScript.
                 </h3>
 
-                <a href="35.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 36 -->
 
-            <div class="card">
+            <a href="36.html" class="card">
 
                 <div class="number">
-                    36
+                    PRACTICAL 36
                 </div>
 
                 <h3>
-                    Demonstrate the z-index property.
+                    Create a countdown timer using JavaScript.
                 </h3>
 
-                <a href="36.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 37 -->
 
-            <div class="card">
+            <a href="37.html" class="card">
 
                 <div class="number">
-                    37
+                    PRACTICAL 37
                 </div>
 
                 <h3>
-                    Demonstrate CSS display properties.
+                    Advanced JavaScript Lab Questions
                 </h3>
 
-                <a href="37.html" class="btn">
-                    Open Practical →
-                </a>
+                <span class="button">
+                    Open Section →
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 38 -->
 
-            <div class="card">
+            <a href="38.html" class="card">
 
                 <div class="number">
-                    38
+                    PRACTICAL 38
                 </div>
 
                 <h3>
-                    Demonstrate visibility and hiding elements using CSS.
+                    Demonstrate ES6 let, const, template literals, and destructuring.
                 </h3>
 
-                <a href="38.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 39 -->
 
-            <div class="card">
+            <a href="39.html" class="card">
 
                 <div class="number">
-                    39
+                    PRACTICAL 39
                 </div>
 
                 <h3>
-                    Create a CSS dropdown menu.
+                    Demonstrate spread and rest operators.
                 </h3>
 
-                <a href="39.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 40 -->
 
-            <div class="card">
+            <a href="40.html" class="card">
 
                 <div class="number">
-                    40
+                    PRACTICAL 40
                 </div>
 
                 <h3>
-                    Demonstrate image hover effects using CSS.
+                    Demonstrate classes and objects.
                 </h3>
 
-                <a href="40.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 41 -->
 
-            <div class="card">
+            <a href="41.html" class="card">
 
                 <div class="number">
-                    41
+                    PRACTICAL 41
                 </div>
 
                 <h3>
-                    Create a CSS tooltip.
+                    Demonstrate inheritance in JavaScript.
                 </h3>
 
-                <a href="41.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 42 -->
 
-            <div class="card">
+            <a href="42.html" class="card">
 
                 <div class="number">
-                    42
+                    PRACTICAL 42
                 </div>
 
                 <h3>
-                    Create a CSS-only button hover animation.
+                    Demonstrate callbacks, promises, and async/await.
                 </h3>
 
-                <a href="42.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 43 -->
 
-            <div class="card">
+            <a href="43.html" class="card">
 
                 <div class="number">
-                    43
+                    PRACTICAL 43
                 </div>
 
                 <h3>
-                    Demonstrate CSS image filters.
+                    Fetch data from an API using Fetch API.
                 </h3>
 
-                <a href="43.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 44 -->
 
-            <div class="card">
+            <a href="44.html" class="card">
 
                 <div class="number">
-                    44
+                    PRACTICAL 44
                 </div>
 
                 <h3>
-                    Demonstrate object-fit and object-position.
+                    Display API data dynamically on a webpage.
                 </h3>
 
-                <a href="44.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 45 -->
 
-            <div class="card">
+            <a href="45.html" class="card">
 
                 <div class="number">
-                    45
+                    PRACTICAL 45
                 </div>
 
                 <h3>
-                    Create a responsive image gallery using CSS.
+                    Store and retrieve data using localStorage.
                 </h3>
 
-                <a href="45.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 46 -->
 
-            <div class="card">
+            <a href="46.html" class="card">
 
                 <div class="number">
-                    46
+                    PRACTICAL 46
                 </div>
 
                 <h3>
-                    Create a card layout using Flexbox.
+                    Create a responsive login form with JavaScript validation.
                 </h3>
 
-                <a href="46.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 47 -->
 
-            <div class="card">
+            <a href="47.html" class="card">
 
                 <div class="number">
-                    47
+                    PRACTICAL 47
                 </div>
 
                 <h3>
-                    Create a dashboard layout using CSS Grid.
+                    Create a complete interactive webpage using HTML, CSS, and JavaScript.
                 </h3>
 
-                <a href="47.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 48 -->
 
-            <div class="card">
+            <a href="48.html" class="card">
 
                 <div class="number">
-                    48
+                    PRACTICAL 48
                 </div>
 
                 <h3>
-                    Create a two-column layout using CSS Grid.
+                    Write a JavaScript program to swap two numbers.
                 </h3>
 
-                <a href="48.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 49 -->
 
-            <div class="card">
+            <a href="49.html" class="card">
 
                 <div class="number">
-                    49
+                    PRACTICAL 49
                 </div>
 
                 <h3>
-                    Create a three-column layout using Flexbox.
+                    Find the Greatest Common Divisor (GCD) of two numbers.
                 </h3>
 
-                <a href="49.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 50 -->
 
-            <div class="card">
+            <a href="50.html" class="card">
 
                 <div class="number">
-                    50
+                    PRACTICAL 50
                 </div>
 
                 <h3>
-                    Create a sticky header using CSS.
+                    Find the Least Common Multiple (LCM) of two numbers.
                 </h3>
 
-                <a href="50.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 51 -->
 
-            <div class="card">
+            <a href="51.html" class="card">
 
                 <div class="number">
-                    51
+                    PRACTICAL 51
                 </div>
 
                 <h3>
-                    Create a fixed sidebar using CSS.
+                    Check whether a number is an Armstrong number.
                 </h3>
 
-                <a href="51.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 52 -->
 
-            <div class="card">
+            <a href="52.html" class="card">
 
                 <div class="number">
-                    52
+                    PRACTICAL 52
                 </div>
 
                 <h3>
-                    Create a responsive footer using CSS.
+                    Check whether a number is a perfect number.
                 </h3>
 
-                <a href="52.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 53 -->
 
-            <div class="card">
+            <a href="53.html" class="card">
 
                 <div class="number">
-                    53
+                    PRACTICAL 53
                 </div>
 
                 <h3>
-                    Create a responsive login and signup page.
+                    Generate the multiplication table of a given number.
                 </h3>
 
-                <a href="53.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 54 -->
 
-            <div class="card">
+            <a href="54.html" class="card">
 
                 <div class="number">
-                    54
+                    PRACTICAL 54
                 </div>
 
                 <h3>
-                    Create a responsive contact form.
+                    Calculate the power of a number.
                 </h3>
 
-                <a href="54.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 55 -->
 
-            <div class="card">
+            <a href="55.html" class="card">
 
                 <div class="number">
-                    55
+                    PRACTICAL 55
                 </div>
 
                 <h3>
-                    Create a responsive college homepage.
+                    Count the number of digits in a number.
                 </h3>
 
-                <a href="55.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 56 -->
 
-            <div class="card">
+            <a href="56.html" class="card">
 
                 <div class="number">
-                    56
+                    PRACTICAL 56
                 </div>
 
                 <h3>
-                    Create a restaurant webpage using CSS.
+                    Find the second-largest element in an array.
                 </h3>
 
-                <a href="56.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 57 -->
 
-            <div class="card">
+            <a href="57.html" class="card">
 
                 <div class="number">
-                    57
+                    PRACTICAL 57
                 </div>
 
                 <h3>
-                    Create an online shopping webpage using CSS.
+                    Remove duplicate elements from an array.
                 </h3>
 
-                <a href="57.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 58 -->
 
-            <div class="card">
+            <a href="58.html" class="card">
 
                 <div class="number">
-                    58
+                    PRACTICAL 58
                 </div>
 
                 <h3>
-                    Create a travel homepage using CSS.
+                    Merge two arrays.
                 </h3>
 
-                <a href="58.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 59 -->
 
-            <div class="card">
+            <a href="59.html" class="card">
 
                 <div class="number">
-                    59
+                    PRACTICAL 59
                 </div>
 
                 <h3>
-                    Create a news/blog layout using CSS Grid.
+                    Find the frequency of each element in an array.
                 </h3>
 
-                <a href="59.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 60 -->
 
-            <div class="card">
+            <a href="60.html" class="card">
 
                 <div class="number">
-                    60
+                    PRACTICAL 60
                 </div>
 
                 <h3>
-                    Create a multi-section portfolio webpage.
+                    Find common elements in two arrays.
                 </h3>
 
-                <a href="60.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 61 -->
 
-            <div class="card">
+            <a href="61.html" class="card">
 
                 <div class="number">
-                    61
+                    PRACTICAL 61
                 </div>
 
                 <h3>
-                    Demonstrate CSS Grid template areas.
+                    Reverse a string.
                 </h3>
 
-                <a href="61.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 62 -->
 
-            <div class="card">
+            <a href="62.html" class="card">
 
                 <div class="number">
-                    62
+                    PRACTICAL 62
                 </div>
 
                 <h3>
-                    Demonstrate Flexbox alignment and ordering.
+                    Check whether a string is a palindrome.
                 </h3>
 
-                <a href="62.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 63 -->
 
-            <div class="card">
+            <a href="63.html" class="card">
 
                 <div class="number">
-                    63
+                    PRACTICAL 63
                 </div>
 
                 <h3>
-                    Create a responsive Grid layout using media queries.
+                    Count vowels and consonants in a string.
                 </h3>
 
-                <a href="63.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 64 -->
 
-            <div class="card">
+            <a href="64.html" class="card">
 
                 <div class="number">
-                    64
+                    PRACTICAL 64
                 </div>
 
                 <h3>
-                    Demonstrate mobile-first responsive design.
+                    Count the number of words in a string.
                 </h3>
 
-                <a href="64.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 65 -->
 
-            <div class="card">
+            <a href="65.html" class="card">
 
                 <div class="number">
-                    65
+                    PRACTICAL 65
                 </div>
 
                 <h3>
-                    Demonstrate CSS transitions.
+                    Find the frequency of characters in a string.
                 </h3>
 
-                <a href="65.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 66 -->
 
-            <div class="card">
+            <a href="66.html" class="card">
 
                 <div class="number">
-                    66
+                    PRACTICAL 66
                 </div>
 
                 <h3>
-                    Demonstrate 2D and 3D CSS transforms.
+                    Demonstrate regular expressions in JavaScript.
                 </h3>
 
-                <a href="66.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
+            </a>
 
 
             <!-- 67 -->
 
-            <div class="card">
+            <a href="67.html" class="card">
 
                 <div class="number">
-                    67
+                    PRACTICAL 67
                 </div>
 
                 <h3>
-                    Demonstrate CSS keyframe animations.
+                    Validate an email address using a regular expression.
                 </h3>
 
-                <a href="67.html" class="btn">
+                <span class="button">
                     Open Practical →
-                </a>
+                </span>
 
-            </div>
-
-
-
-            <!-- 68 -->
-
-            <div class="card">
-
-                <div class="number">
-                    68
-                </div>
-
-                <h3>
-                    Create a loading spinner using CSS.
-                </h3>
-
-                <a href="68.html" class="btn">
-                    Open Practical →
-                </a>
-
-            </div>
-
-
-
-            <!-- 69 -->
-
-            <div class="card">
-
-                <div class="number">
-                    69
-                </div>
-
-                <h3>
-                    Create a sliding image/card animation using CSS.
-                </h3>
-
-                <a href="69.html" class="btn">
-                    Open Practical →
-                </a>
-
-            </div>
-
-
-
-            <!-- 70 -->
-
-            <div class="card">
-
-                <div class="number">
-                    70
-                </div>
-
-                <h3>
-                    Create a CSS-only modal/popup.
-                </h3>
-
-                <a href="70.html" class="btn">
-                    Open Practical →
-                </a>
-
-            </div>
-
-
-
-            <!-- 71 -->
-
-            <div class="card">
-
-                <div class="number">
-                    71
-                </div>
-
-                <h3>
-                    Implement dark mode using CSS variables.
-                </h3>
-
-                <a href="71.html" class="btn">
-                    Open Practical →
-                </a>
-
-            </div>
-
-
-
-            <!-- 72 -->
-
-            <div class="card">
-
-                <div class="number">
-                    72
-                </div>
-
-                <h3>
-                    Demonstrate responsive typography using CSS.
-                </h3>
-
-                <a href="72.html" class="btn">
-                    Open Practical →
-                </a>
-
-            </div>
-
-
-
-            <!-- 73 -->
-
-            <div class="card">
-
-                <div class="number">
-                    73
-                </div>
-
-                <h3>
-                    Demonstrate clamp(), min() and max() functions.
-                </h3>
-
-                <a href="73.html" class="btn">
-                    Open Practical →
-                </a>
-
-            </div>
-
-
-
-            <!-- 74 -->
-
-            <div class="card">
-
-                <div class="number">
-                    74
-                </div>
-
-                <h3>
-                    Demonstrate the calc() CSS function.
-                </h3>
-
-                <a href="74.html" class="btn">
-                    Open Practical →
-                </a>
-
-            </div>
-
-
-
-            <!-- 75 -->
-
-            <div class="card">
-
-                <div class="number">
-                    75
-                </div>
-
-                <h3>
-                    Create a complete responsive website using HTML5, CSS3, Flexbox, Grid and media queries.
-                </h3>
-
-                <a href="75.html" class="btn">
-                    Open Practical →
-                </a>
-
-            </div>
+            </a>
 
 
         </div>
 
-    </section>
+    </div>
 
 
-
-    <!-- ---------- FOOTER ---------- -->
+    <!-- FOOTER -->
 
     <footer>
 
-        <p>
-            <strong>CodeSphere</strong>
-        </p>
-
-        <p>
-            CSS Practical Programs
-        </p>
+        © 2026 <strong>CodeSphere</strong>
+        • JavaScript Practical Lab
 
     </footer>
 
-
 </body>
+
 </html>
+
