@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Webpage</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .box {
+            width: 200px;
+            padding: 30px;
+            border: 2px solid black;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .box {
+                width: 80%;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="topbar">
+            <div class="logo">Code<span>Sphere</span></div>
+            <div class="nav">
+                <a href="index.html">Home</a>
+                <a href="../index.html">Main</a>
+            </div>
+        </div>
+        <div class="card">
+
+
+    <h1>Responsive Website</h1>
+
+    <div class="container">
+
+        <div class="box">HTML</div>
+        <div class="box">CSS</div>
+        <div class="box">JavaScript</div>
+
+    </div>
+
+        </div>
+    </div>
+</body>
+</html>
