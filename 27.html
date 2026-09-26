@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practical 27 - Digital Clock</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;font-family:Arial,Helvetica,sans-serif;color:white;min-height:100vh;
+background:radial-gradient(circle at top left,#4f46e5,transparent 35%),
+radial-gradient(circle at bottom right,#0891b2,transparent 35%),#020617;
+}
+.navbar{
+height:70px;padding:0 8%;display:flex;align-items:center;
+background:rgba(15,23,42,.75);backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+.logo{font-size:25px;font-weight:bold}.logo span{color:#38bdf8}
+.container{
+width:90%;max-width:900px;margin:70px auto;padding:40px;text-align:center;
+background:rgba(255,255,255,.07);backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.12);border-radius:20px;
+}
+.badge{
+display:inline-block;padding:8px 15px;border:1px solid rgba(56,189,248,.4);
+background:rgba(56,189,248,.08);color:#38bdf8;border-radius:20px;
+}
+h1{font-size:40px}.question{color:#94a3b8;font-size:18px}
+.clock{
+margin:30px auto;padding:30px;
+background:rgba(0,0,0,.3);border-radius:15px;
+color:#38bdf8;font-size:50px;font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo">Code<span>Sphere</span></div>
+</nav>
+
+<div class="container">
+
+<div class="badge">JavaScript Practical 27</div>
+
+<h1>Digital Clock</h1>
+
+<p class="question">
+Create a digital clock using JavaScript.
+</p>
+
+<div class="clock" id="clock">00:00:00</div>
+
+</div>
+
+<script>
+function updateClock() {
+
+    let now = new Date();
+
+    let hours = String(now.getHours()).padStart(2, "0");
+    let minutes = String(now.getMinutes()).padStart(2, "0");
+    let seconds = String(now.getSeconds()).padStart(2, "0");
+
+    document.getElementById("clock").innerHTML =
+        hours + ":" + minutes + ":" + seconds;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>

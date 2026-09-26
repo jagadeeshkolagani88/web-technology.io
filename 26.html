@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practical 26 - Change Image</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;font-family:Arial,Helvetica,sans-serif;color:white;min-height:100vh;
+background:radial-gradient(circle at top left,#4f46e5,transparent 35%),
+radial-gradient(circle at bottom right,#0891b2,transparent 35%),#020617;
+}
+.navbar{
+height:70px;padding:0 8%;display:flex;align-items:center;
+background:rgba(15,23,42,.75);backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+.logo{font-size:25px;font-weight:bold}.logo span{color:#38bdf8}
+.container{
+width:90%;max-width:900px;margin:60px auto;padding:40px;text-align:center;
+background:rgba(255,255,255,.07);backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.12);border-radius:20px;
+}
+.badge{
+display:inline-block;padding:8px 15px;border:1px solid rgba(56,189,248,.4);
+background:rgba(56,189,248,.08);color:#38bdf8;border-radius:20px;
+}
+h1{font-size:40px}.question{color:#94a3b8;font-size:18px}
+img{
+width:300px;height:180px;object-fit:cover;border-radius:15px;
+margin:20px;border:2px solid rgba(56,189,248,.4);
+}
+button{
+background:#0284c7;color:white;border:none;padding:12px 25px;
+border-radius:10px;font-weight:bold;cursor:pointer;
+}
+button:hover{background:#0ea5e9}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo">Code<span>Sphere</span></div>
+</nav>
+
+<div class="container">
+
+<div class="badge">JavaScript Practical 26</div>
+
+<h1>Change Image</h1>
+
+<p class="question">
+Create a program to change an image when a button is clicked.
+</p>
+
+<img id="myImage"
+src="https://picsum.photos/300/180?random=1"
+alt="Sample Image">
+
+<br>
+
+<button onclick="changeImage()">Change Image</button>
+
+</div>
+
+<script>
+function changeImage() {
+    document.getElementById("myImage").src =
+        "https://picsum.photos/300/180?random=" + Math.random();
+}
+</script>
+
+</body>
+</html>
+
