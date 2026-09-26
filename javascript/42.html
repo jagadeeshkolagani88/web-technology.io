@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practical 42 - Async JavaScript</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;color:white;min-height:100vh;
+background:radial-gradient(circle at top left,#4f46e5,transparent 35%),
+radial-gradient(circle at bottom right,#0891b2,transparent 35%),#020617}
+.navbar{height:70px;padding:0 8%;display:flex;align-items:center;
+background:rgba(15,23,42,.75);backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.1)}
+.logo{font-size:25px;font-weight:bold}.logo span{color:#38bdf8}
+.container{width:90%;max-width:900px;margin:60px auto;padding:40px;text-align:center;
+background:rgba(255,255,255,.07);backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.12);border-radius:20px}
+.badge{display:inline-block;padding:8px 15px;border:1px solid rgba(56,189,248,.4);
+background:rgba(56,189,248,.08);color:#38bdf8;border-radius:20px}
+h1{font-size:40px}.question{color:#94a3b8;font-size:18px}
+button{background:#0284c7;color:white;border:none;padding:12px 25px;
+border-radius:10px;font-weight:bold;cursor:pointer}
+button:hover{background:#0ea5e9}
+.output{margin-top:25px;padding:20px;background:rgba(0,0,0,.25);
+border-radius:10px;color:#38bdf8;font-size:18px;line-height:2}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar"><div class="logo">Code<span>Sphere</span></div></nav>
+
+<div class="container">
+
+<div class="badge">JavaScript Practical 42</div>
+
+<h1>Async JavaScript</h1>
+
+<p class="question">
+Demonstrate callbacks, promises, and async/await.
+</p>
+
+<button onclick="runDemo()">Run Program</button>
+
+<div class="output" id="output">Output will appear here</div>
+
+</div>
+
+<script>
+function callbackDemo(callback) {
+    callback("Callback executed successfully.");
+}
+
+function promiseDemo() {
+    return new Promise(function(resolve) {
+        setTimeout(function() {
+            resolve("Promise resolved successfully.");
+        }, 500);
+    });
+}
+
+async function runDemo() {
+
+    let output = document.getElementById("output");
+
+    callbackDemo(function(message) {
+        output.innerHTML = message;
+    });
+
+    let result = await promiseDemo();
+
+    output.innerHTML += "<br>" + result;
+    output.innerHTML += "<br>Async/Await executed successfully.";
+}
+</script>
+
+</body>
+</html>
+
